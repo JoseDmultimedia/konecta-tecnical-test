@@ -7,7 +7,6 @@ const Solicitud = sequelize.define(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true, 
       autoIncrement: true 
     },
@@ -20,13 +19,19 @@ const Solicitud = sequelize.define(
       allowNull: false,
     },
     resumen: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     id_empleado: {
         type: DataTypes.INTEGER,
         allowNull: false,
-      }
+    }
+  },
+  {
+    timestamps: false,
+    createdAt: false,
+    updatedAt: false,
+    tableName: "solicitud",
   },
   { tableName: "solicitud" }
 );

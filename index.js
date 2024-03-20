@@ -4,6 +4,7 @@ const morgan = require('morgan')
 
 const app = express();
 const port = 3000;
+const {sequelize} = require('./src/config/connection.js');
 
 
 //Settings
@@ -19,6 +20,21 @@ app.get('/', (req, res) => {
   res.send('Hello world!');
 });
 
-app.listen(port, () => {
-  console.log(`Server listen on http://localhost:${port}`);
-});
+//Routes
+
+app.use(require('./src/routes/empleadoRoutes.js'));
+app.use(require('./src/routes/solicitudRoutes.js'));
+
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection success');
+  })
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`Server listen on http://localhost:${port}`);
+    });
+  })
+  .catch((error) => {
+    console.error('Connection fail', error);
+  });

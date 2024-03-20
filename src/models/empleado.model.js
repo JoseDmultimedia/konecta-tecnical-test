@@ -6,9 +6,8 @@ const Empleado = sequelize.define(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true, 
-      autoIncrement: true 
+      primaryKey: true,
+      autoIncrement: true,
     },
     fecha_ingreso: {
       type: DataTypes.DATE,
@@ -21,11 +20,17 @@ const Empleado = sequelize.define(
     salario: {
       type: DataTypes.FLOAT,
       allowNull: false,
-    }
+    },
   },
+  {
+    timestamps: false,
+    createdAt: false,
+    updatedAt: false,
+    tableName: "empleado",
+  },
+
   { tableName: "empleado" }
 );
-
 
 module.exports = {
   Empleado,

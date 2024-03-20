@@ -7,7 +7,7 @@ const getAllSolicitud = async (req, res) => {
             include : {
                 model : Empleado,
                 attributes : ['nombre'],
-                as : 'empleado'
+                as : 'Empleado'
             }
         });
 
@@ -16,7 +16,7 @@ const getAllSolicitud = async (req, res) => {
             codigo : solicitud.codigo,
             resumen : solicitud.resumen,
             descripcion : solicitud.descripcion,
-            nombre_empleado : solicitud.empleado.nombre
+            nombre_empleado : solicitud.Empleado.nombre
         }));
 
         res.json(formatSolicitudes);
@@ -68,7 +68,7 @@ const updateSolicitud = async (req, res) => {
         solicitudFound.id_empleado = id_empleado;
 
         solicitudFound.save();
-
+        res.status(200).json({message: 'Solicitud actualizada', data : solicitudFound});
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Server error' });
@@ -83,6 +83,7 @@ const delSolicitud = async (req, res) => {
             return res.status(400).json({message : 'Solicitud no encontrada'});
         };
         solicitudFound.destroy();
+        res.status(200).json({message: 'Solicitud eliminada', data : solicitudFound});
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: 'Server error' });

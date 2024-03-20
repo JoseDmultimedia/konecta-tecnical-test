@@ -51,6 +51,7 @@ const updateEmpleado = async (req, res) => {
         empleadoFound.salario = salario;
 
         await empleadoFound.save();
+        res.status(200).json({message: 'Empleado actualizado', data : empleadoFound});
     } catch (error) {
         console.log(error);
         res.status(500).json({message : 'Server error'})
@@ -65,14 +66,12 @@ const delEmpleado = async (req, res) => {
             return res.status(400).json({message : 'Empleado no encontrado'});
         }
         empleadoFound.destroy();
-        
+        res.status(200).json({message: 'Empleado eliminado', data : empleadoFound});
     } catch (error) {
         console.log(error);
         res.status(500).json({message : 'Server error'})
     }
 }
-
-
 
 module.exports = {
     getAllEmpleado,
