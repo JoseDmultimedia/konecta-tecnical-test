@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "df980fab-707e-49fc-8bea-19af71a737ad",
+		"name": "Konecta-test-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21179588"
+	},
+	"item": [
+		{
+			"name": "Empleado",
+			"item": [
+				{
+					"name": "Get All Empleados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/konecta-test/v1/empleado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"konecta-test",
+								"v1",
+								"empleado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Empleado By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/konecta-test/v1/empleado/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"konecta-test",
+								"v1",
+								"empleado",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Empleado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\" : \"Andres\",\n    \"fecha_ingreso\" : \"2024-03-20\",\n    \"salario\" : 14000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/konecta-test/v1/empleado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"konecta-test",
+								"v1",
+								"empleado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Empleado",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\" : \"Jose David\",\n    \"fecha_ingreso\" : \"2024-03-20\",\n    \"salario\" : 3000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/konecta-test/v1/empleado/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"konecta-test",
+								"v1",
+								"empleado",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Empleado",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/konecta-test/v1/empleado/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"konecta-test",
+								"v1",
+								"empleado",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Empleado By Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/konecta-test/v1/empleado/getByName/Camila",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"konecta-test",
+								"v1",
+								"empleado",
+								"getByName",
+								"Camila"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Solicitud",
+			"item": [
+				{
+					"name": "Get All Solicitud",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/konecta-test/v1/solicitud",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"konecta-test",
+								"v1",
+								"solicitud"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Solicitud By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/konecta-test/v1/solicitud/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"konecta-test",
+								"v1",
+								"solicitud",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Solicitud",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\" : \"cod2\",\n    \"descripcion\" : \"des2\",\n    \"resumen\" : \"res2\",\n    \"id_empleado\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/konecta-test/v1/solicitud",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"konecta-test",
+								"v1",
+								"solicitud"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Solicitud",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\" : \"otro\",\n    \"descripcion\" : \"otro\",\n    \"resumen\" : \"otro\",\n    \"id_empleado\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/konecta-test/v1/solicitud/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"konecta-test",
+								"v1",
+								"solicitud",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Solicitud",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/konecta-test/v1/solicitud/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"konecta-test",
+								"v1",
+								"solicitud",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -17,4 +17,4 @@ Next is important to change some values in the connection.js in the config folde
 to run the server 
 `npm start
 `
-
+Inside the db folder there is a postman json file, with the documantion for the endpoints 
