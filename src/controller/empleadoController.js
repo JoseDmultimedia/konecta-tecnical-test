@@ -22,6 +22,17 @@ const getByIdEmpleado = async (req, res) => {
     }
 };
 
+const getByNameEmpleado = async (req, res) => {
+    const {nombre} = req.params;
+    try {
+        const empleado = await Empleado.findOne({where : {nombre : nombre}});
+        res.json(empleado);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({message : 'Server error'});
+    }
+};
+
 const createEmpleado = async (req, res) => {
     const {fecha_ingreso, nombre, salario} = req.body;
     try {
@@ -78,5 +89,6 @@ module.exports = {
     getByIdEmpleado,
     createEmpleado,
     updateEmpleado,
-    delEmpleado
+    delEmpleado,
+    getByNameEmpleado
 };
