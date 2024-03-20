@@ -1,7 +1,7 @@
 const { Empleado } = require('../models/empleado.model.js');
 
 
-const getAll = async (req, res) => {
+const getAllEmpleado = async (req, res) => {
   try {
     const empleados = await Empleado.findAll();
     res.json(empleados);
@@ -11,7 +11,7 @@ const getAll = async (req, res) => {
   }
 };
 
-const getById = async (req, res) => {
+const getByIdEmpleado = async (req, res) => {
     const {id} = req.params;
     try {
         const empleado = await Empleado.findOne({where : {id : id}});
@@ -22,7 +22,7 @@ const getById = async (req, res) => {
     }
 };
 
-const create = async (req, res) => {
+const createEmpleado = async (req, res) => {
     const {fecha_ingreso, nombre, salario} = req.body;
     try {
         const empleadoCreated = await Empleado.create({
@@ -37,7 +37,7 @@ const create = async (req, res) => {
     }
 };
 
-const update = async (req, res) => {
+const updateEmpleado = async (req, res) => {
     const {id} = req.params;
     const {fecha_ingreso, nombre, salario} = req.body;
     try {
@@ -57,7 +57,7 @@ const update = async (req, res) => {
     }
 };
 
-const del = async (req, res) => {
+const delEmpleado = async (req, res) => {
     const {id} = req.params;
     try {
         const empleadoFound = await Empleado.findByPk(id);
@@ -75,9 +75,9 @@ const del = async (req, res) => {
 
 
 module.exports = {
-    getAll,
-    getById,
-    create,
-    update,
-    del
+    getAllEmpleado,
+    getByIdEmpleado,
+    createEmpleado,
+    updateEmpleado,
+    delEmpleado
 };
